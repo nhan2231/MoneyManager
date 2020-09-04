@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'date',
+    loadChildren: () => import('./date/date.module').then( m => m.DatePageModule)
+  },
+  {
+    path: 'expense',
+    loadChildren: () => import('./expense/expense.module').then( m => m.ExpensePageModule)
+  },
+  {
+    path: 'edit/:year/:month/:key',
+    loadChildren: () => import('./edit/edit.module').then( m => m.EditPageModule)
+  },
 ];
 
 @NgModule({

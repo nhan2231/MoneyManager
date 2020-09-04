@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyBbVbSi0UKB270XPhs7FCaYK1_7nZauBfY",
+    authDomain: "money-manager-22f53.firebaseapp.com",
+    databaseURL: "https://money-manager-22f53.firebaseio.com",
+    projectId: "money-manager-22f53",
+    storageBucket: "money-manager-22f53.appspot.com",
+    messagingSenderId: "909615177825",
+    appId: "1:909615177825:web:94d9688f2c35d179700a20"
+  }
 };
 
 /*
@@ -14,3 +23,5 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+

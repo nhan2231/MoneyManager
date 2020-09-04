@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Monthly Expenditure</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" id="body">
+  <div id="container">
+    <!-- <h3>This is date picker page</h3>
+    <ul>
+      <li *ngFor="let number of numbers">
+        {{number.item}}
+      </li>
+    </ul>
+    <ion-button color="light" (click)="addMonth()">Test add month</ion-button>
+    <ion-button color="dark" (click)="addItem()">Test add item</ion-button> -->
+
+    <label for="exampleFormControlSelect1">Choose Year / Month </label>
+    <select class="form-control" id="form1" [(ngModel)]='year'>
+      <option *ngFor="let year of years" value="{{year.year}}">{{year.year}}</option>
+    </select>
+    <select class="form-control" id="form2" [(ngModel)]='month' (click)="chooseTime()">
+      <option value="01">1</option>
+      <option value="02">2</option>
+      <option value="03">3</option>
+      <option value="04">4</option>
+      <option value="05">5</option>
+      <option value="06">6</option>
+      <option value="07">7</option>
+      <option value="08">8</option>
+      <option value="09">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+
+    <h2> {{month}} /  {{year}}</h2>
+
+    <ion-list>
+      <ion-item-sliding *ngFor="let item of items">
+        <ion-item>
+          <div>
+            <h5>{{item.payload.val().item}}</h5>
+            <h6 id="h6">{{item.payload.val().date}}/{{month}}</h6>
+          </div>
+          <ion-note slot="end" color="tertiary">{{item.payload.val().price | currency: 'VND'}}</ion-note>
+        </ion-item>
+
+        <ion-item-options side="start">
+          <ion-item-option color="primary" (click)="edit(item.key, item.payload.val())">Edit</ion-item-option>
+        </ion-item-options>
+
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="delete(item.key)">Delete</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+    <div id="sticky-footer">
+      <p>Total: {{totalSpent | currency: "VND"}}</p>
+    </div>
+    
+  </div>
+</ion-content>

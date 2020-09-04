@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="date"></ion-back-button>
+    </ion-buttons>
+    <ion-title>edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align:center">
+  <ion-item>
+    <ion-label position="floating">Item Name</ion-label>
+    <ion-input [(ngModel)]='item' style="text-align:center"></ion-input>
+  </ion-item>
+<br>
+  <ion-item>
+    <ion-label >Price</ion-label>
+    <ion-input [(ngModel)]='price' type="number" style="text-align:center"></ion-input>
+  </ion-item>
+<br>
+  <ion-item>
+    <ion-label >Day</ion-label>
+    <ion-input [(ngModel)]='date' type="number" style="text-align:center" max="31" min="1"></ion-input>
+  </ion-item>
+<br>
+  <ion-button color="success" (click)="updateItem()" [disabled]="!item || !price || !date">Save</ion-button>
+</ion-content>
